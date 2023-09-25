@@ -1,0 +1,771 @@
+<Project>
+  <Name>Untitled</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Media Bazaar</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>UserDAO</Name>
+        <Access>Public</Access>
+        <Location left="3523" top="1838" />
+        <Size width="267" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public bool CreateUser(User user)</Member>
+        <Member type="Method">public bool DeleteUser(User user)</Member>
+        <Member type="Method">public bool UpdateUser(User user)</Member>
+        <Member type="Method">public List&lt;User&gt; GetAllUsers()</Member>
+        <Member type="Method">public User GetUserByID(int id)</Member>
+        <Member type="Method">public User Login(string email, string password)</Member>
+        <Member type="Method">public User GetUserByEmail(string email)</Member>
+        <Member type="Method">public bool UserExistsByEmail(string email)</Member>
+        <Member type="Method">public string GetSalt(string email)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>UserManager</Name>
+        <Access>Public</Access>
+        <Location left="4418" top="1049" />
+        <Size width="243" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public bool CreateUser(User user)</Member>
+        <Member type="Method">public bool DeleteUser(User user)</Member>
+        <Member type="Method">public bool UpdateUser(User user)</Member>
+        <Member type="Method">public List&lt;User&gt; GetAllUsers()</Member>
+        <Member type="Method">public User GetUserByID(int id)</Member>
+        <Member type="Method">public User Login(string email, string password)</Member>
+        <Member type="Method">public User GetUserByEmail(string email)</Member>
+        <Member type="Method">public bool UserExistsByEmail(string email)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IUserDAO</Name>
+        <Access>Public</Access>
+        <Location left="3897" top="1838" />
+        <Size width="260" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool CreateUser(User user)</Member>
+        <Member type="Method">bool DeleteUser(User user)</Member>
+        <Member type="Method">bool UpdateUser(User user)</Member>
+        <Member type="Method">List&lt;User&gt; GetAllUsers()</Member>
+        <Member type="Method">User GetUserByID(int id)</Member>
+        <Member type="Method">User Login(string email, string password)</Member>
+        <Member type="Method">User GetUserByEmail(string email)</Member>
+        <Member type="Method">bool UserExistsByEmail(string email)</Member>
+        <Member type="Method">string GetSalt(string email)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IUserManager</Name>
+        <Access>Public</Access>
+        <Location left="3934" top="1049" />
+        <Size width="278" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool CreateUser(User user)</Member>
+        <Member type="Method">bool DeleteUser(User user)</Member>
+        <Member type="Method">bool UpdateUser(User user)</Member>
+        <Member type="Method">List&lt;User&gt; GetAllUsers()</Member>
+        <Member type="Method">User GetUserByID(int id)</Member>
+        <Member type="Method">User Login(string email, string password)</Member>
+        <Member type="Method">User GetUserByEmail(string email)</Member>
+        <Member type="Method">bool UserExistsByEmail(string email)</Member>
+      </Entity>
+      <Entity type="Enum">
+        <Name>UserType</Name>
+        <Access>Public</Access>
+        <Location left="3542" top="10" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>HR</Value>
+        <Value>Employee</Value>
+        <Value>Admin</Value>
+        <Value>Manager</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>User</Name>
+        <Access>Public</Access>
+        <Location left="3678" top="322" />
+        <Size width="1123" height="315" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int UserID { get; set; }</Member>
+        <Member type="Property">public string Email { get; set; }</Member>
+        <Member type="Property">public string Password { get; set; }</Member>
+        <Member type="Property">public string FirstName { get; set; }</Member>
+        <Member type="Property">public string LastName { get; set; }</Member>
+        <Member type="Property">public DateOnly DateOfBirth { get; set; }</Member>
+        <Member type="Property">public Address Address { get; set; }</Member>
+        <Member type="Property">public string PhoneNumber { get; set; }</Member>
+        <Member type="Property">public Gender Gender { get; set; }</Member>
+        <Member type="Property">public int BSN { get; set; }</Member>
+        <Member type="Property">public UserType UserType { get; set; }</Member>
+        <Member type="Property">public Department? Department { get; set; }</Member>
+        <Member type="Constructor">public User(int userID, string email, string password, string firstName, string lastName, DateOnly dateOfBirth, Address address, string phoneNumber, Gender gender, int bsn, UserType userType, Department? department)</Member>
+        <Member type="Constructor">public User()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AddressDAO</Name>
+        <Access>Public</Access>
+        <Location left="5052" top="1809" />
+        <Size width="243" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public bool AddAddress(Address address)</Member>
+        <Member type="Method">public bool DeleteAddress(Address address)</Member>
+        <Member type="Method">public bool UpdateAddress(Address address)</Member>
+        <Member type="Method">public Address GetAddressByID(int addressID)</Member>
+        <Member type="Method">public Address GetLastAddress()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Address</Name>
+        <Access>Public</Access>
+        <Location left="5045" top="512" />
+        <Size width="474" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int AddressID { get; set; }</Member>
+        <Member type="Property">public string StreetName { get; set; }</Member>
+        <Member type="Property">public string HouseNumber { get; set; }</Member>
+        <Member type="Property">public string ZIPCode { get; set; }</Member>
+        <Member type="Property">public string City { get; set; }</Member>
+        <Member type="Property">public string Country { get; set; }</Member>
+        <Member type="Constructor">public Address(int id, string name, string number, string zipcode, string city, string country)</Member>
+        <Member type="Constructor">public Address()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>Gender</Name>
+        <Access>Public</Access>
+        <Location left="3880" top="10" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>Male</Value>
+        <Value>Female</Value>
+        <Value>Other</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>ProductDAO</Name>
+        <Access>Public</Access>
+        <Location left="2029" top="1847" />
+        <Size width="306" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public bool CreateProduct(Product product)</Member>
+        <Member type="Method">public bool DeleteProduct(Product product)</Member>
+        <Member type="Method">public bool UpdateProduct(Product product)</Member>
+        <Member type="Method">public Product GetProductByID(int ID)</Member>
+        <Member type="Method">public List&lt;Product&gt; GetAllProducts()</Member>
+        <Member type="Method">public List&lt;Product&gt; GetProductsBySubCat(int SubCatID)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IProductDAO</Name>
+        <Access>Public</Access>
+        <Location left="1574" top="1863" />
+        <Size width="306" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool CreateProduct(Product product)</Member>
+        <Member type="Method">bool DeleteProduct(Product product)</Member>
+        <Member type="Method">bool UpdateProduct(Product product)</Member>
+        <Member type="Method">Product GetProductByID(int ID)</Member>
+        <Member type="Method">List&lt;Product&gt; GetAllProducts()</Member>
+        <Member type="Method">List&lt;Product&gt; GetProductsBySubCat(int SubCatID)</Member>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IProductManager</Name>
+        <Access>Public</Access>
+        <Location left="1452" top="1136" />
+        <Size width="319" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool CreateProduct(Product product)</Member>
+        <Member type="Method">bool DeleteProduct(Product product)</Member>
+        <Member type="Method">bool UpdateProduct(Product product)</Member>
+        <Member type="Method">Product GetProductByID(int ID)</Member>
+        <Member type="Method">List&lt;Product&gt; GetAllProducts()</Member>
+        <Member type="Method">List&lt;Product&gt; GetProductsBySubCat(int SubCatID)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>ProductManager</Name>
+        <Access>Public</Access>
+        <Location left="1921" top="1136" />
+        <Size width="311" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public bool CreateProduct(Product product)</Member>
+        <Member type="Method">public bool DeleteProduct(Product product)</Member>
+        <Member type="Method">public bool UpdateProduct(Product product)</Member>
+        <Member type="Method">public Product GetProductByID(int ID)</Member>
+        <Member type="Method">public List&lt;Product&gt; GetAllProducts()</Member>
+        <Member type="Method">public List&lt;Product&gt; GetProductsBySubCat(int SubCatID)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CategoryManager</Name>
+        <Access>Public</Access>
+        <Location left="400" top="1136" />
+        <Size width="411" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public bool CreateCategory(Category category)</Member>
+        <Member type="Method">public bool CreateSubCat(Category category)</Member>
+        <Member type="Method">public bool DeleteCategory(Category category)</Member>
+        <Member type="Method">public List&lt;Category&gt; GetAllCategories()</Member>
+        <Member type="Method">public List&lt;Category&gt; GetSubCategories()</Member>
+        <Member type="Method">public bool UpdateCategory(Category category)</Member>
+        <Member type="Method">public bool UpdateSubCategory(Category category)</Member>
+        <Member type="Method">public List&lt;Category&gt; GetSubCatsWithSameParentID(Category parentID)</Member>
+        <Member type="Method">public Category GetCategoryByID(int id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ICategoryManager</Name>
+        <Access>Public</Access>
+        <Location left="878" top="1136" />
+        <Size width="411" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool CreateCategory(Category category)</Member>
+        <Member type="Method">bool CreateSubCat(Category category)</Member>
+        <Member type="Method">bool DeleteCategory(Category category)</Member>
+        <Member type="Method">List&lt;Category&gt; GetAllCategories()</Member>
+        <Member type="Method">List&lt;Category&gt; GetSubCategories()</Member>
+        <Member type="Method">bool UpdateCategory(Category category)</Member>
+        <Member type="Method">bool UpdateSubCategory(Category category)</Member>
+        <Member type="Method">List&lt;Category&gt; GetSubCatsWithSameParentID(Category parentID)</Member>
+        <Member type="Method">Category GetCategoryByID(int id)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>CategoryDAO</Name>
+        <Access>Public</Access>
+        <Location left="81" top="1846" />
+        <Size width="411" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public bool CreateCategory(Category category)</Member>
+        <Member type="Method">public bool CreateSubCat(Category category)</Member>
+        <Member type="Method">public bool DeleteCategory(Category category)</Member>
+        <Member type="Method">public List&lt;Category&gt; GetAllCategories()</Member>
+        <Member type="Method">public List&lt;Category&gt; GetAllSubCategories()</Member>
+        <Member type="Method">public bool UpdateCategory(Category category)</Member>
+        <Member type="Method">public bool UpdateSubCategory(Category category)</Member>
+        <Member type="Method">public List&lt;Category&gt; GetSubCatsWithSameParentID(Category parentID)</Member>
+        <Member type="Method">public Category GetCategoryByID(int id)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>ICategoryDAO</Name>
+        <Access>Public</Access>
+        <Location left="583" top="1846" />
+        <Size width="401" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool CreateCategory(Category category)</Member>
+        <Member type="Method">bool CreateSubCat(Category category)</Member>
+        <Member type="Method">bool DeleteCategory(Category category)</Member>
+        <Member type="Method">List&lt;Category&gt; GetAllCategories()</Member>
+        <Member type="Method">List&lt;Category&gt; GetAllSubCategories()</Member>
+        <Member type="Method">bool UpdateCategory(Category category)</Member>
+        <Member type="Method">bool UpdateSubCategory(Category category)</Member>
+        <Member type="Method">List&lt;Category&gt; GetSubCatsWithSameParentID(Category parentID)</Member>
+        <Member type="Method">Category GetCategoryByID(int id)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>Category</Name>
+        <Access>Public</Access>
+        <Location left="56" top="346" />
+        <Size width="457" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int CategoryID { get; set; }</Member>
+        <Member type="Property">public string CategoryName { get; set; }</Member>
+        <Member type="Property">public Department ParentDepartment { get; set; }</Member>
+        <Member type="Constructor">public Category()</Member>
+        <Member type="Constructor">public Category(int CategoryID, string CategoryName, Department ParentDepartment)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Product</Name>
+        <Access>Public</Access>
+        <Location left="1526" top="350" />
+        <Size width="832" height="264" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int ProductID { get; set; }</Member>
+        <Member type="Property">public string ProductName { get; set; }</Member>
+        <Member type="Property">public double Price { get; set; }</Member>
+        <Member type="Property">public int Quantity { get; set; }</Member>
+        <Member type="Property">public int ItemThreshold { get; set; }</Member>
+        <Member type="Property">public sting Unit { get; set; }</Member>
+        <Member type="Property">public Category SubCategory { get; set; }</Member>
+        <Member type="Property">public Department Department { get; set; }</Member>
+        <Member type="Constructor">public Product(int id, string name, double price, int quantity, int itemThreshold, string Unit, Category category, Category subcategory, Department department)</Member>
+        <Member type="Constructor">public Product()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Department</Name>
+        <Access>Public</Access>
+        <Location left="2736" top="394" />
+        <Size width="399" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int DepartmentID { get; set; }</Member>
+        <Member type="Property">public string Name { get; set; }</Member>
+        <Member type="Property">public User Manager { get; set; }</Member>
+        <Member type="Method">public DateOnly CreationDate()</Member>
+        <Member type="Constructor">public Department(int id, string name, user manager, DateOnly creationDate)</Member>
+        <Member type="Constructor">public Department()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IDepartmentManager</Name>
+        <Access>Public</Access>
+        <Location left="2697" top="1090" />
+        <Size width="323" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool CreateDepartment(Department department)</Member>
+        <Member type="Method">bool DeleteDepartment(Department department)</Member>
+        <Member type="Method">bool UpdateDepartment(Department department)</Member>
+        <Member type="Method">Department GetDepartmentByID(int id)</Member>
+        <Member type="Method">List&lt;Department&gt; GetAllDepartments()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>DepartmentManager</Name>
+        <Access>Public</Access>
+        <Location left="3154" top="1090" />
+        <Size width="307" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public bool CreateDepartment(Department department)</Member>
+        <Member type="Method">public bool DeleteDepartment(Department department)</Member>
+        <Member type="Method">public bool UpdateDepartment(Department department)</Member>
+        <Member type="Method">public Department GetDepartmentByID(int id)</Member>
+        <Member type="Method">public List&lt;Department&gt; GetAllDepartments()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IDepartmentDAO</Name>
+        <Access>Public</Access>
+        <Location left="2978" top="1867" />
+        <Size width="323" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool CreateDepartment(Department department)</Member>
+        <Member type="Method">bool DeleteDepartment(Department department)</Member>
+        <Member type="Method">bool UpdateDepartment(Department department)</Member>
+        <Member type="Method">Department GetDepartmentByID(int id)</Member>
+        <Member type="Method">List&lt;Department&gt; GetAllDepartments()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>DepartmentDAO</Name>
+        <Access>Public</Access>
+        <Location left="2530" top="1867" />
+        <Size width="313" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public bool CreateDepartment(Department department)</Member>
+        <Member type="Method">public bool DeleteDepartment(Department department)</Member>
+        <Member type="Method">public bool UpdateDepartment(Department department)</Member>
+        <Member type="Method">public Department GetDepartmentByID(int id)</Member>
+        <Member type="Method">public List&lt;Department&gt; GetAllDepartments()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Shift</Name>
+        <Access>Public</Access>
+        <Location left="5983" top="343" />
+        <Size width="411" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int ShiftID { get; set; }</Member>
+        <Member type="Property">public DateOnly Date { get; set; }</Member>
+        <Member type="Property">public ShiftType ShiftType { get; set; }</Member>
+        <Member type="Property">public List&lt;User&gt; Employees { get; set; }</Member>
+        <Member type="Constructor">public Shift(int id, string name, ShiftType shiftType, List&lt;User&gt; employees)</Member>
+        <Member type="Constructor">public Shift()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IShiftManager</Name>
+        <Access>Public</Access>
+        <Location left="5832" top="1063" />
+        <Size width="239" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool CreateShift(Shift shift)</Member>
+        <Member type="Method">bool DeleteShift(Shift shift)</Member>
+        <Member type="Method">bool UpdateShift(Shift shift)</Member>
+        <Member type="Method">Shift GetShiftByID(int id)</Member>
+        <Member type="Method">List&lt;Shift&gt; GetAllShifts()</Member>
+      </Entity>
+      <Entity type="Enum">
+        <Name>ShiftType</Name>
+        <Access>Public</Access>
+        <Location left="5824" top="19" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Value>morning</Value>
+        <Value>afternoon</Value>
+        <Value>night</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>ShiftManager</Name>
+        <Access>Public</Access>
+        <Location left="6221" top="1063" />
+        <Size width="220" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public bool CreateShift(Shift shift)</Member>
+        <Member type="Method">public bool DeleteShift(Shift shift)</Member>
+        <Member type="Method">public bool UpdateShift(Shift shift)</Member>
+        <Member type="Method">public Shift GetShiftByID(int id)</Member>
+        <Member type="Method">public List&lt;Shift&gt; GetAllShifts()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IShiftDAO</Name>
+        <Access>Public</Access>
+        <Location left="5801" top="1812" />
+        <Size width="194" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">bool CreateShift(Shift shift)</Member>
+        <Member type="Method">bool DeleteShift(Shift shift)</Member>
+        <Member type="Method">bool UpdateShift(Shift shift)</Member>
+        <Member type="Method">Shift GetShiftByID(int id)</Member>
+        <Member type="Method">List&lt;Shift&gt; GetAllShifts()</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>ShiftDAO</Name>
+        <Access>Public</Access>
+        <Location left="6256" top="1812" />
+        <Size width="221" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public bool CreateShift(Shift shift)</Member>
+        <Member type="Method">public bool DeleteShift(Shift shift)</Member>
+        <Member type="Method">public bool UpdateShift(Shift shift)</Member>
+        <Member type="Method">public Shift GetShiftByID(int id)</Member>
+        <Member type="Method">public List&lt;Shift&gt; GetAllShifts()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Dependency" first="5" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>3800</X>
+          <Y>297</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="0" second="2">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="0" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>3743</X>
+          <Y>1810</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="1" second="2">
+        <Label>provides DB connection for</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>3970</X>
+          <Y>1745</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>repo</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="3">
+        <Label>manages</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>3884</X>
+          <Y>664</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>4026</X>
+          <Y>1024</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="1" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="6" second="7">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>5419</X>
+          <Y>1940</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>5573</X>
+          <Y>649</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="5" second="7">
+        <Label>using</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>4991</X>
+          <Y>558</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Dependency" first="5" second="8">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="12" second="10">
+        <Label>provides DB connection for</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>repo</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Realization" first="9" second="10">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="9" second="18">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2315</X>
+          <Y>1062</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2131</X>
+          <Y>687</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="12" second="11">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="11" second="18">
+        <Label>manages</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="14" second="17">
+        <Label>manages</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>356</X>
+          <Y>587</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Dependency" first="15" second="17">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>307</X>
+          <Y>1821</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="13" second="16">
+        <Label>provides DB connection for</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>710</X>
+          <Y>1407</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>repo</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Realization" first="13" second="14">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="15" second="16">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="18" second="17">
+        <Label>has</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>*</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="19" second="20">
+        <Label>manages</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2941</X>
+          <Y>639</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Realization" first="21" second="20">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="21" second="22">
+        <Label>provide DB connectoin for</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>repo</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Realization" first="23" second="22">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="23" second="19">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>2607</X>
+          <Y>992</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2786</X>
+          <Y>659</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="18" second="19">
+        <Label>are sold in</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>*</StartMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="19">
+        <Label>work in</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="5" second="24">
+        <Label>works</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>4836</X>
+          <Y>414</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>0..*</StartMultiplicity>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="24" second="25">
+        <Label>manages</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>5906</X>
+          <Y>1038</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Dependency" first="24" second="26">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="27" second="25">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="27" second="28">
+        <Label>provides DB connection for</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>repo</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Realization" first="29" second="28">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="29" second="24">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>6506</X>
+          <Y>1925</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>6540</X>
+          <Y>512</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="17" second="19">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>257</X>
+          <Y>306</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>2953</X>
+          <Y>306</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>ParentDepartment</EndRole>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="6">
+        <Label>provides DB connection for</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>4810</X>
+          <Y>1201</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <EndRole>repo</EndRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="7">
+        <Label>manages</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>4136</X>
+          <Y>1018</Y>
+        </BendPoint>
+        <Direction>Bidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
