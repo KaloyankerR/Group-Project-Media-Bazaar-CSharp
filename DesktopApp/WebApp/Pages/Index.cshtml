@@ -1,0 +1,42 @@
+﻿    @page
+    @model IndexModel
+    @{
+        ViewData["Title"] = "Weekly Calendar";
+    }
+    @using Classes
+<h1>Employee Calendar</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Morning</th>
+            <th scope="col">Day</th>
+            <th scope="col">Evening</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var (date, shifts) in Model.Shifts)
+        {
+            <tr class="@(date == DateOnly.FromDateTime(DateTime.Today) )" style="background-color:@(date == DateOnly.FromDateTime(DateTime.Today) ? "#BDD7EE" : "")">
+                <th>@date.ToString("dd, MMMM, dddd ")</th>
+                <td class="@(shifts[ShiftType.Morning])" style="background-color:@(shifts[ShiftType.Morning] ? "#FFE699" : "#C6E0B4")">
+                    @(shifts[ShiftType.Morning] ? "Not working" : "Working")
+                </td>
+                <td class="@(shifts[ShiftType.Afternoon])" style="background-color:@(shifts[ShiftType.Afternoon] ? "#FFE699" : "#C6E0B4")">
+                    @(shifts[ShiftType.Afternoon] ? "Not working" : "Working")
+                </td>
+                <td class="@(shifts[ShiftType.Night])" style="background-color:@(shifts[ShiftType.Night] ? "#FFE699" : "#C6E0B4")">
+                    @(shifts[ShiftType.Night] ? "Not working" : "Working")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+

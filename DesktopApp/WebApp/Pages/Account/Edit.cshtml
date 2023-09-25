@@ -1,0 +1,96 @@
+﻿@page
+@model WebApp.Pages.Account.EditModel
+@{
+}
+
+<h1>Edit User</h1>
+<form method="post">
+    <input type="hidden" asp-for="@Model.User.UserID" value="@Model.User.UserID" />
+    <input type="hidden" asp-for="@Model.User.Email" value="@Model.User.Email" />
+    <input type="hidden" asp-for="@Model.User.Address" value="@Model.User.Address" />
+    <input type="hidden" asp-for="@Model.User.Gender" value="@Model.User.Gender" />
+    <input type="hidden" asp-for="@Model.User.BSN" value="@Model.User.BSN" />
+    <input type="hidden" asp-for="@Model.User.UserType" value="@Model.User.UserType" />
+    <input type="hidden" asp-for="@Model.User.Department" value="@Model.User.Department" />
+    <input type="hidden" asp-for="@Model.User.DateOfBirth" value=@Model.User.DateOfBirth />
+    <input type="hidden" asp-for="@Model.User.Password" value=@Model.User.Password />
+
+
+    <h3>Personal details</h3>
+    <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" asp-for="@Model.User.FirstName" value="@Model.User.FirstName" />
+    </div>
+    <br/>
+    <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" asp-for="@Model.User.LastName" value="@Model.User.LastName" />
+    </div>
+    <br/>
+
+    @*<div>
+    <label for="password">Password:</label>
+    <input type="password" asp-for="User.Password" id="password" value="@Model.User.Password" />
+    <button type="button" onclick="togglePasswordVisibility()">See password</button>
+    </div>*@
+
+    <div>
+        <label>Date of Birth:</label>
+        <input asp-for="@Model.Date" type="text" value="@Model.User.DateOfBirth.ToShortDateString()" readonly />
+        @*<input type="text" asp-for="User.DateOfBirth.Day" value="@Model.User.DateOfBirth.Day" />
+        <input type="text" asp-for="User.DateOfBirth.Month" value="@Model.User.DateOfBirth.Month" />
+        <input type="text" asp-for="User.DateOfBirth.Year" value="@Model.User.DateOfBirth.Year" />*@
+    </div>
+    <br/>
+    <div>
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" asp-for="@Model.User.PhoneNumber" value="@Model.User.PhoneNumber" />
+    </div>
+    <br/>
+    <br />
+    <h3>Address</h3>
+    <input type="hidden" asp-for="@Model.User.Address.AddressID" value="@Model.User.Address.AddressID" />
+
+    <br />
+    <div>
+        <label for="streetName">Street Name:</label>
+        <input type="text" asp-for="@Model.User.Address.StreetName" value="@Model.User.Address.StreetName" />
+    </div>
+    <br />
+    <div>
+        <label for="houseNumber">House Number:</label>
+        <input type="text" asp-for="@Model.User.Address.HouseNumber" value="@Model.User.Address.HouseNumber" />
+    </div>
+    <br />
+    <div>
+        <label for="zipCode">ZIP Code:</label>
+        <input type="text" asp-for="@Model.User.Address.ZIPCode" value="@Model.User.Address.ZIPCode" />
+    </div>
+    <br />
+    <div>
+        <label for="city">City:</label>
+        <input type="text" asp-for="@Model.User.Address.City" value="@Model.User.Address.City" />
+    </div>
+    <br />
+    <div>
+        <label for="country">Country:</label>
+        <input type="text" asp-for="@Model.User.Address.Country" value="@Model.User.Address.Country" />
+    </div>
+    <br />
+
+
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <button href="#" onclick="history.back();" class="btn btn-secondary">Cancel</button>
+</form>
+
+@*<script>
+    function togglePasswordVisibility() {
+        var passwordField = document.getElementById("password");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+</script>*@

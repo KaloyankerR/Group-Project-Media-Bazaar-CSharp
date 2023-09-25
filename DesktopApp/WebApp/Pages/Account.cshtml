@@ -1,0 +1,43 @@
+﻿@page
+@model WebApp.Pages.AccountModel
+@{
+    Layout = "_Layout";
+}
+
+<style>
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="container">
+    <h2>My Account</h2>
+    <ul>
+        <br/>
+        <li><strong>Name:</strong> @Model.user.FirstName @Model.user.LastName </li>
+        <br/>
+        <li><strong>Email:</strong> @Model.user.Email</li>
+        <br/>
+        <li><strong>Phone:</strong> @Model.user.PhoneNumber</li>
+        <br/>
+        <li><strong>Address:</strong> @Model.user.Address.StreetName @Model.user.Address.HouseNumber @Model.user.Address.City @Model.user.Address.Country @Model.user.Address.ZIPCode</li>
+        <br/>
+        <li><strong>Date Of Birth:</strong> @Model.user.DateOfBirth</li>
+        <br/>
+        <li><strong>Gender:</strong> @Model.user.Gender</li>
+        <br/>
+        <li><strong>BSN:</strong> @Model.user.BSN</li>
+        <br/>
+        <li><strong>Department:</strong> @Model.user.Department.Name</li>
+        <br/>
+    </ul>
+    
+    <a href="/Account/Edit" class="btn btn-primary">Edit Account</a>
+
+</div>

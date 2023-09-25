@@ -1,0 +1,145 @@
+﻿@page
+@model WebApp.Pages.PreferedScheduleModel
+@{
+}
+
+@using Classes
+@if(@Model.SelectedWeek == @Model.CurentWeek)
+{
+    <p style="background-color: #BDD7EE">Week Number: @Model.SelectedWeek</p>
+}
+else
+{
+    <p>Week Number: @Model.SelectedWeek</p>
+}
+
+@if (Model.Values.All(v => !v.HasValue) || Model.Values.Count == 0)
+{
+    <h2>There are no set preferred schedules for the selected week!</h2>
+}
+else
+{
+    <h2>Values already set!</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @for (int i = 0; i < Model.Values.Count; i++)
+                {
+                    <td>
+                        @{
+                            var value = Model.Values[i];
+                            if (value.HasValue)
+                            {
+                                int shiftValue = value.Value;
+                                if (shiftValue == 0)
+                                {
+                                    <span>Morning</span>
+                                }
+                                else if (shiftValue == 1)
+                                {
+                                    <span>Afternoon</span>
+                                }
+                                else if (shiftValue == 2)
+                                {
+                                    <span>Evening</span>
+                                }
+                            }
+                            else
+                            {
+                                <span>n/a</span>
+                            }
+                        }
+                    </td>
+                }
+            </tr>
+        </tbody>
+    </table>
+}
+<br />
+<br />
+@if (Model.Values.All(v => !v.HasValue) || Model.Values.Count == 0)
+{
+    <h2>Set the prefered schedule!</h2>
+}
+else
+{
+    <h2>Change the prefered schedule for selected week!</h2>
+}
+<form method="post">
+    <table>
+        <thead>
+            <tr>
+                <th>Shifts</th>
+
+                @foreach (var day in Model.DaysOfWeek)
+                {
+                    <th>@day</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < 3; i++)
+            {
+                <tr>
+                    <td>@Model.ShiftType[i]</td>
+                    @for (int j = 0; j < 7; j++)
+                    {
+                        int? dayShift = Model.Values1[j];
+                        int selectedValue = dayShift != null ? dayShift.Value : -1;
+                        <td><input type="radio" name="shift_@Model.DaysOfWeek[j]" value="@i" @(selectedValue == i ? "checked" : "") /></td>
+                    }
+                </tr>
+            }
+
+
+            <tr>
+                <td></td>
+                @foreach (var day in Model.DaysOfWeek)
+                {
+                    <td><button type="button" onclick="clearSelection('shift_@day')">Clear</button></td>
+                }
+            </tr>
+        </tbody>
+    </table>
+    <form method="post" asp-page-handler="Index">
+        <button type="submit">Save</button>
+    </form>
+</form>
+<br />
+<br />
+<div style="display: flex; gap: 10px;">
+    <form method="post" asp-page-handler="PreviousWeek">
+        <button type="submit">Previous Week</button>
+    </form>
+    <form method="post" asp-page-handler="CurrentWeek">
+        <button type="submit">Current Week</button>
+    </form>
+    <form method="post" asp-page-handler="NextWeek">
+        <button type="submit">Next Week</button>
+    </form>
+</div>
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+<script>
+    function clearSelection(name) {
+        var radios = document.getElementsByName(name);
+        radios.forEach(function (radio) {
+            radio.checked = false;
+        });
+    }
+</script>
