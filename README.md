@@ -20,14 +20,13 @@ Media Bazaar boasts a plethora of features tailored to enhance your experience:
 - **Automatic Scheduling**: Generate employee schedules automatically based on predefined criteria and availability.
 - **Cross-Platform Access**: Access the application from any web browser for flexibility and convenience.
 - **Task Allocation**: Assign tasks to employees and track their progress in real-time for workflow management.
-- **Reporting and Analytics**: Generate reports on employee performance and storage inventory for informed decision-making.
 
 ## Project Details
 - **Development Team**: Built by a team of 5 people using the waterfall methodology.
 
 ## Installation
 
-Get started with Fit Fusion in just a few simple steps:
+Get started with Media Bazaar in just a few simple steps:
 
 1. Clone the repository.
    ```bash
