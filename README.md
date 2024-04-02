@@ -5,6 +5,7 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
+- [Project Details)(#project-details)
 - [Installation](#installation)
 
 ## Introduction
@@ -20,6 +21,9 @@ Fit Fusion boasts a plethora of features tailored to enhance your experience:
 - **Cross-Platform Access**: Access the application from any web browser for flexibility and convenience.
 - **Task Allocation**: Assign tasks to employees and track their progress in real-time for workflow management.
 - **Reporting and Analytics**: Generate reports on employee performance and storage inventory for informed decision-making.
+
+## Project Details
+- **Development Team**: Built by a team of 5 people using the waterfall methodology.
 
 ## Installation
 
