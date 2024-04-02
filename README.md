@@ -14,7 +14,7 @@ The Media Bazaar Employee and Storage Management System comprises desktop and we
 
 ## Features
 
-Fit Fusion boasts a plethora of features tailored to enhance your experience:
+Media Bazaar boasts a plethora of features tailored to enhance your experience:
 - **Employee Scheduling**: Create and manage employee schedules for optimal shift coverage.
 - **Storage Management**: Perform CRUD operations on storage items (add, edit, delete) for inventory management.
 - **Automatic Scheduling**: Generate employee schedules automatically based on predefined criteria and availability.
