@@ -5,7 +5,7 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
-- [Project Details)(#project-details)
+- [Project Details](#project-details)
 - [Installation](#installation)
 
 ## Introduction
